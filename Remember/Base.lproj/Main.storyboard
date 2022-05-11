@@ -123,6 +123,10 @@
                     </view>
                     <connections>
                         <outlet property="addButton" destination="Bxt-d1-oGY" id="rlG-Pr-Fdu"/>
+                        <outlet property="addButtonBottomConstraint" destination="mSk-cO-nHr" id="pP4-e8-gsT"/>
+                        <outlet property="addButtonHeighConstraint" destination="38C-xx-OhD" id="TD1-4c-rFi"/>
+                        <outlet property="addButtonTrailingConstraint" destination="1bj-e2-z28" id="5p9-Ms-JOa"/>
+                        <outlet property="addButtonWidthConstraint" destination="Tie-7L-Cg7" id="uFL-58-U7A"/>
                         <outlet property="catalogsTable" destination="SOD-XK-s2n" id="czo-AV-RgB"/>
                     </connections>
                 </viewController>

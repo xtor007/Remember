@@ -15,6 +15,12 @@ class MainVC: UIViewController {
     @IBOutlet weak var catalogsTable: UITableView!
     let cellId = "catalogCell"
     
+    @IBOutlet weak var addButtonHeighConstraint: NSLayoutConstraint!
+    @IBOutlet weak var addButtonWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var addButtonBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var addButtonTrailingConstraint: NSLayoutConstraint!
+    
+    
     var catalogs: [Catalog] = []
     
     override func viewDidLoad() {
@@ -77,7 +83,20 @@ class MainVC: UIViewController {
     }
     
     @IBAction func addAction(_ sender: Any) {
-        print("Add")
+        print(view.frame)
+        print(addButton.frame)
+        UIView.animate(withDuration: 0.5, delay: 0.2, options: .curveLinear) {
+            let height = self.view.frame.height*2
+            let screenWidth = self.view.frame.width
+            self.addButton.frame = CGRect(x: screenWidth-50-height/2, y: -85, width: height, height: height)
+            self.addButton.layer.cornerRadius = height/2
+            self.addButtonHeighConstraint.constant = height
+            self.addButtonWidthConstraint.constant = height
+            self.addButtonTrailingConstraint.constant = 50 - height/2
+            self.addButtonBottomConstraint.constant = height/2 - 50
+        } completion: { isFinish in
+            print("finish")
+        }
     }
 
 }
