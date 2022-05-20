@@ -134,11 +134,154 @@
             </objects>
             <point key="canvasLocation" x="34.399999999999999" y="83.208395802098963"/>
         </scene>
+        <!--Create CatalogVC-->
+        <scene sceneID="Wqu-oX-QMw">
+            <objects>
+                <viewController storyboardIdentifier="createCatalog" id="hWK-5u-b8X" customClass="CreateCatalogVC" customModule="Remember" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Guq-5v-o4y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2pP-S5-MD6">
+                                <rect key="frame" x="16" y="177" width="343" height="62"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="MIx-Xe-qac"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="text">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="selectTypeAction:" destination="hWK-5u-b8X" eventType="touchUpInside" id="jzI-r8-LDr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgj-8b-kdT">
+                                <rect key="frame" x="16" y="247" width="343" height="62"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="CrQ-cO-Y1d"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="photo">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="selectTypeAction:" destination="hWK-5u-b8X" eventType="touchUpInside" id="KIM-hh-Wn6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wX6-2p-8CB">
+                                <rect key="frame" x="16" y="317" width="343" height="62"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="aFY-AY-BGi"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="photo with text">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="selectTypeAction:" destination="hWK-5u-b8X" eventType="touchUpInside" id="oCV-aT-3cO"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Set name of new catalog" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NKA-Tl-z4g">
+                                <rect key="frame" x="16" y="40" width="343" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="G93-vg-bPt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vby-SR-D8K">
+                                <rect key="frame" x="16" y="585" width="343" height="62"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYI-7u-xLW">
+                                        <rect key="frame" x="0.0" y="0.0" width="167.5" height="62"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="&lt;BACK">
+                                            <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="backAction:" destination="hWK-5u-b8X" eventType="touchUpInside" id="b1o-8b-eP1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6b-n6-Hbd">
+                                        <rect key="frame" x="175.5" y="0.0" width="167.5" height="62"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="NEXT&gt;">
+                                            <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="nextAction:" destination="hWK-5u-b8X" eventType="touchUpInside" id="cQc-Va-B1t"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="JVd-kE-FhE"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fDz-En-50H"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="NKA-Tl-z4g" firstAttribute="leading" secondItem="fDz-En-50H" secondAttribute="leading" constant="16" id="8gb-BZ-fN8"/>
+                            <constraint firstItem="fDz-En-50H" firstAttribute="trailing" secondItem="pgj-8b-kdT" secondAttribute="trailing" constant="16" id="Eab-zI-SvN"/>
+                            <constraint firstItem="fDz-En-50H" firstAttribute="bottom" secondItem="vby-SR-D8K" secondAttribute="bottom" constant="20" id="MY0-x7-ZTg"/>
+                            <constraint firstItem="wX6-2p-8CB" firstAttribute="leading" secondItem="fDz-En-50H" secondAttribute="leading" constant="16" id="NVg-wl-pus"/>
+                            <constraint firstItem="wX6-2p-8CB" firstAttribute="top" secondItem="pgj-8b-kdT" secondAttribute="bottom" constant="8" id="NbE-Fv-bHi"/>
+                            <constraint firstItem="2pP-S5-MD6" firstAttribute="top" secondItem="NKA-Tl-z4g" secondAttribute="bottom" constant="103" id="SDp-jj-kAD"/>
+                            <constraint firstItem="fDz-En-50H" firstAttribute="trailing" secondItem="2pP-S5-MD6" secondAttribute="trailing" constant="16" id="UQ0-Oe-wy9"/>
+                            <constraint firstItem="fDz-En-50H" firstAttribute="trailing" secondItem="vby-SR-D8K" secondAttribute="trailing" constant="16" id="d7l-Nn-mSK"/>
+                            <constraint firstItem="pgj-8b-kdT" firstAttribute="top" secondItem="2pP-S5-MD6" secondAttribute="bottom" constant="8" id="egh-iQ-C9c"/>
+                            <constraint firstItem="pgj-8b-kdT" firstAttribute="leading" secondItem="fDz-En-50H" secondAttribute="leading" constant="16" id="hXh-Ip-Zgb"/>
+                            <constraint firstItem="fDz-En-50H" firstAttribute="trailing" secondItem="wX6-2p-8CB" secondAttribute="trailing" constant="16" id="k2Q-oo-JlW"/>
+                            <constraint firstItem="fDz-En-50H" firstAttribute="trailing" secondItem="NKA-Tl-z4g" secondAttribute="trailing" constant="16" id="uhu-KR-Tjb"/>
+                            <constraint firstItem="NKA-Tl-z4g" firstAttribute="top" secondItem="fDz-En-50H" secondAttribute="top" constant="40" id="uqU-FW-zPE"/>
+                            <constraint firstItem="vby-SR-D8K" firstAttribute="leading" secondItem="fDz-En-50H" secondAttribute="leading" constant="16" id="yec-bc-0IV"/>
+                            <constraint firstItem="2pP-S5-MD6" firstAttribute="leading" secondItem="fDz-En-50H" secondAttribute="leading" constant="16" id="zbh-YK-DAe"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="YAK-oX-WBh" appends="YES" id="YLt-UN-TSp"/>
+                            <outletCollection property="gestureRecognizers" destination="Lfz-vI-cZg" appends="YES" id="BVO-vx-WPo"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="nameText" destination="NKA-Tl-z4g" id="Prk-KZ-OTM"/>
+                        <outletCollection property="selectTypeButtons" destination="2pP-S5-MD6" collectionClass="NSMutableArray" id="4lf-c1-wWY"/>
+                        <outletCollection property="selectTypeButtons" destination="pgj-8b-kdT" collectionClass="NSMutableArray" id="08M-yU-3GY"/>
+                        <outletCollection property="selectTypeButtons" destination="wX6-2p-8CB" collectionClass="NSMutableArray" id="pgt-qa-LGh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3g3-tA-28k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="YAK-oX-WBh">
+                    <connections>
+                        <action selector="swipe:" destination="hWK-5u-b8X" id="bcL-4d-wXO"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <tapGestureRecognizer id="Lfz-vI-cZg">
+                    <connections>
+                        <action selector="tap:" destination="hWK-5u-b8X" id="qiK-dc-Puu"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="728.79999999999995" y="82.3088455772114"/>
+        </scene>
     </scenes>
     <resources>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

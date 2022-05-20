@@ -15,6 +15,10 @@
 		FF2C304D28214A8C0059F2C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF2C304B28214A8C0059F2C3 /* LaunchScreen.storyboard */; };
 		FF2C3058282155450059F2C3 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2C3057282155450059F2C3 /* MainVC.swift */; };
 		FF2C305A282155FD0059F2C3 /* CatalogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2C3059282155FD0059F2C3 /* CatalogCell.swift */; };
+		FF798F8C2837C72F004F3C91 /* CreateCatalogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798F8B2837C72F004F3C91 /* CreateCatalogVC.swift */; };
+		FF798F912837C998004F3C91 /* TaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798F902837C998004F3C91 /* TaskType.swift */; };
+		FF798F942837CF60004F3C91 /* PresentDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798F932837CF60004F3C91 /* PresentDetails.swift */; };
+		FF798F962837D2CF004F3C91 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798F952837D2CF004F3C91 /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		FF2C304E28214A8C0059F2C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF2C3057282155450059F2C3 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		FF2C3059282155FD0059F2C3 /* CatalogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCell.swift; sourceTree = "<group>"; };
+		FF798F8B2837C72F004F3C91 /* CreateCatalogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCatalogVC.swift; sourceTree = "<group>"; };
+		FF798F902837C998004F3C91 /* TaskType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskType.swift; sourceTree = "<group>"; };
+		FF798F932837CF60004F3C91 /* PresentDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentDetails.swift; sourceTree = "<group>"; };
+		FF798F952837D2CF004F3C91 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,7 @@
 		FF2C303C28214A870059F2C3 /* Remember */ = {
 			isa = PBXGroup;
 			children = (
+				FF798F8D2837C927004F3C91 /* Enums */,
 				FF2C305628214AD70059F2C3 /* Services */,
 				FF2C305528214AB60059F2C3 /* View */,
 				FF2C305428214AA80059F2C3 /* Controllers */,
@@ -77,7 +86,9 @@
 		FF2C305428214AA80059F2C3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FF798F922837CF4C004F3C91 /* Extantions */,
 				FF2C3057282155450059F2C3 /* MainVC.swift */,
+				FF798F8B2837C72F004F3C91 /* CreateCatalogVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -93,8 +104,25 @@
 		FF2C305628214AD70059F2C3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FF798F952837D2CF004F3C91 /* DataService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		FF798F8D2837C927004F3C91 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				FF798F902837C998004F3C91 /* TaskType.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		FF798F922837CF4C004F3C91 /* Extantions */ = {
+			isa = PBXGroup;
+			children = (
+				FF798F932837CF60004F3C91 /* PresentDetails.swift */,
+			);
+			path = Extantions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,10 +196,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF798F962837D2CF004F3C91 /* DataService.swift in Sources */,
+				FF798F8C2837C72F004F3C91 /* CreateCatalogVC.swift in Sources */,
 				FF2C304828214A870059F2C3 /* Remember.xcdatamodeld in Sources */,
 				FF2C305A282155FD0059F2C3 /* CatalogCell.swift in Sources */,
 				FF2C3058282155450059F2C3 /* MainVC.swift in Sources */,
+				FF798F912837C998004F3C91 /* TaskType.swift in Sources */,
 				FF2C303E28214A870059F2C3 /* AppDelegate.swift in Sources */,
+				FF798F942837CF60004F3C91 /* PresentDetails.swift in Sources */,
 				FF2C304028214A870059F2C3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -26,65 +26,21 @@ class MainVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addButton.layer.cornerRadius = addButton.frame.width/2
-        //
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let el1 = Catalog(context: context)
-        el1.name = "Astronomy"
-        el1.type = "photo"
-        catalogs.append(el1)
-        let el2 = Catalog(context: context)
-        el2.name = "English"
-        el2.type = "text"
-        catalogs.append(el2)
-        let el3 = Catalog(context: context)
-        el3.name = "Astronomy"
-        el3.type = "photo"
-        catalogs.append(el3)
-        let el4 = Catalog(context: context)
-        el4.name = "English"
-        el4.type = "text"
-        catalogs.append(el4)
-        let el5 = Catalog(context: context)
-        el5.name = "Astronomy"
-        el5.type = "photo"
-        catalogs.append(el5)
-        let el6 = Catalog(context: context)
-        el6.name = "English"
-        el6.type = "text"
-        catalogs.append(el6)
-        let el7 = Catalog(context: context)
-        el7.name = "Astronomy"
-        el7.type = "photo"
-        catalogs.append(el7)
-        let el8 = Catalog(context: context)
-        el8.name = "English"
-        el8.type = "text"
-        catalogs.append(el8)
-        let el9 = Catalog(context: context)
-        el9.name = "Astronomy"
-        el9.type = "photo"
-        catalogs.append(el9)
-        let el10 = Catalog(context: context)
-        el10.name = "English"
-        el10.type = "text"
-        catalogs.append(el10)
-        let el11 = Catalog(context: context)
-        el11.name = "Astronomy"
-        el11.type = "photo"
-        catalogs.append(el11)
-        let el12 = Catalog(context: context)
-        el12.name = "English"
-        el12.type = "text"
-        catalogs.append(el12)
-        //
         catalogsTable.dataSource = self
         catalogsTable.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        DataService.storage.getAllCatalogs { catalogs in
+            self.catalogs = catalogs
+            self.catalogsTable.reloadData()
+        } onError: { message in
+            //error
+        }
+    }
+    
     @IBAction func addAction(_ sender: Any) {
-        print(view.frame)
-        print(addButton.frame)
+        let startFrame = addButton.frame
         UIView.animate(withDuration: 0.5, delay: 0.2, options: .curveLinear) {
             let height = self.view.frame.height*2
             let screenWidth = self.view.frame.width
@@ -95,7 +51,19 @@ class MainVC: UIViewController {
             self.addButtonTrailingConstraint.constant = 50 - height/2
             self.addButtonBottomConstraint.constant = height/2 - 50
         } completion: { isFinish in
-            print("finish")
+            if let createCatalogVC = self.storyboard?.instantiateViewController(withIdentifier: "createCatalog") as? CreateCatalogVC {
+                createCatalogVC.modalPresentationStyle = .fullScreen
+                self.present(createCatalogVC, animated: false) {
+                    self.addButton.frame = startFrame
+                    self.addButton.layer.cornerRadius = startFrame.width/2
+                    self.addButtonHeighConstraint.constant = 80
+                    self.addButtonWidthConstraint.constant = 80
+                    self.addButtonTrailingConstraint.constant = 20
+                    self.addButtonBottomConstraint.constant = -20
+                }
+            } else {
+                //ERROR
+            }
         }
     }
 
