@@ -84,7 +84,11 @@ extension EditCatalogVC: UITableViewDelegate, UITableViewDataSource {
                 if indexPath.row == self.tasks.count {
                     editTaskVC.uploadData(name: self.catalogName, type: self.taskType)
                 } else {
-                    //
+                    let task = self.tasks[indexPath.row]
+                    editTaskVC.uploadData(name: self.catalogName, type: self.taskType, task: task)
+                    DataService.storage.deleteTask(task) {} onError: { message in
+                        //error
+                    }
                 }
             }
         }
@@ -97,7 +101,6 @@ extension EditCatalogVC: UITableViewDelegate, UITableViewDataSource {
             } onError: { message in
                 //error
             }
-
         }
         swipeDelete.backgroundColor = .systemRed
         let actions = [swipeDelete]
