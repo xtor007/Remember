@@ -77,4 +77,17 @@ extension EditCatalogVC: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let editTaskVC = storyboard?.instantiateViewController(withIdentifier: "editTaskVC") as? EditTaskVC {
+            editTaskVC.modalPresentationStyle = .fullScreen
+            presentDetail(editTaskVC) {
+                if indexPath.row == self.tasks.count {
+                    editTaskVC.uploadData(name: self.catalogName, type: self.taskType)
+                } else {
+                    //
+                }
+            }
+        }
+    }
+    
 }

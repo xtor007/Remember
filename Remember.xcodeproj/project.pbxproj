@@ -23,6 +23,7 @@
 		FF798F9A28391C3A004F3C91 /* AddNewTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798F9928391C3A004F3C91 /* AddNewTaskCell.swift */; };
 		FF798F9C28391CB3004F3C91 /* EditCatalogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798F9B28391CB3004F3C91 /* EditCatalogVC.swift */; };
 		FF798F9E283927AB004F3C91 /* CloseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798F9D283927AB004F3C91 /* CloseDelegate.swift */; };
+		FF798FA028393E6C004F3C91 /* EditTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798F9F28393E6C004F3C91 /* EditTaskVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		FF798F9928391C3A004F3C91 /* AddNewTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskCell.swift; sourceTree = "<group>"; };
 		FF798F9B28391CB3004F3C91 /* EditCatalogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCatalogVC.swift; sourceTree = "<group>"; };
 		FF798F9D283927AB004F3C91 /* CloseDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseDelegate.swift; sourceTree = "<group>"; };
+		FF798F9F28393E6C004F3C91 /* EditTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				FF2C3057282155450059F2C3 /* MainVC.swift */,
 				FF798F8B2837C72F004F3C91 /* CreateCatalogVC.swift */,
 				FF798F9B28391CB3004F3C91 /* EditCatalogVC.swift */,
+				FF798F9F28393E6C004F3C91 /* EditTaskVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF798F9C28391CB3004F3C91 /* EditCatalogVC.swift in Sources */,
+				FF798FA028393E6C004F3C91 /* EditTaskVC.swift in Sources */,
 				FF798F962837D2CF004F3C91 /* DataService.swift in Sources */,
 				FF798F9E283927AB004F3C91 /* CloseDelegate.swift in Sources */,
 				FF798F8C2837C72F004F3C91 /* CreateCatalogVC.swift in Sources */,

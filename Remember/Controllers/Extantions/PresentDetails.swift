@@ -9,7 +9,7 @@ import UIKit
 
 extension UIViewController {
     
-    func presentDetail(_ toPresent: UIViewController, withDuration duration: CFTimeInterval = 0.4, completion: (() -> (Void))?) {
+    func presentDetail(_ toPresent: UIViewController, withDuration duration: CFTimeInterval = 0.4, completion: (() -> (Void))? = nil) {
         let transition = CATransition()
         transition.duration = duration
         transition.type = .push

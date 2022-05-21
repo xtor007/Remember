@@ -15,7 +15,10 @@ class DataService {
     static let storage = DataService()
     
     func addNewCatalog(name: String, type: TaskType, onSucces: @escaping ()->(Void), onError: @escaping (String)->(Void)) {
-        guard let context = appDelegate?.persistentContainer.viewContext else {return}
+        guard let context = appDelegate?.persistentContainer.viewContext else {
+            onError("Something is not good")
+            return
+        }
         let catalog = Catalog(context: context)
         catalog.name = name
         catalog.type = type.rawValue
@@ -75,7 +78,26 @@ class DataService {
         } onError: { message in
             onError(message)
         }
-
+    }
+    
+    func addTask(forCatalog catalog: String, withTextTask text: String?, withPhoto photo: UIImage?, withAnswer answer: String, onSucces: @escaping ()->(Void), onError: @escaping (String)->(Void)) {
+        guard let context = appDelegate?.persistentContainer.viewContext else {
+            onError("Something is not good")
+            return
+        }
+        let task = Task(context: context)
+        task.catalog = catalog
+        task.textTask = text
+        if let photo = photo {
+            task.photoTask = photo.pngData()
+        }
+        task.answer = answer
+        do {
+            try context.save()
+            onSucces()
+        } catch {
+            onError(error.localizedDescription)
+        }
     }
     
 }
