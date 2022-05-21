@@ -28,7 +28,10 @@ class DataService {
     }
     
     func getAllCatalogs(onSucces: @escaping ([Catalog])->(Void), onError: @escaping (String)->(Void)) {
-        guard let context = appDelegate?.persistentContainer.viewContext else {return}
+        guard let context = appDelegate?.persistentContainer.viewContext else {
+            onError("Something is not good")
+            return
+        }
         var res = [Catalog]()
         let fetchRequest = NSFetchRequest<Catalog>(entityName: "Catalog")
         do {
@@ -37,6 +40,42 @@ class DataService {
         } catch {
             onError(error.localizedDescription)
         }
+    }
+    
+    func getTasks(forCatalog catalog: String, onSucces: @escaping ([Task])->(Void), onError: @escaping (String)->(Void)) {
+        guard let context = appDelegate?.persistentContainer.viewContext else {
+            onError("Something is not good")
+            return
+        }
+        var tasks = [Task]()
+        let fetchRequest = NSFetchRequest<Task>(entityName: "Task")
+        do {
+            try tasks = context.fetch(fetchRequest)
+            var res = [Task]()
+            for task in tasks {
+                if task.catalog == catalog {
+                    res.append(task)
+                }
+            }
+            onSucces(res)
+        } catch {
+            onError(error.localizedDescription)
+        }
+    }
+    
+    func isCatalogNameOk(_ name: String, onSucces: @escaping (Bool)->(Void), onError: @escaping (String)->(Void)) {
+        getAllCatalogs { catalogs in
+            if catalogs.contains(where: { catalog in
+                catalog.name == name
+            }) {
+                onSucces(false)
+            } else {
+                onSucces(true)
+            }
+        } onError: { message in
+            onError(message)
+        }
+
     }
     
 }

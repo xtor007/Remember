@@ -19,6 +19,10 @@
 		FF798F912837C998004F3C91 /* TaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798F902837C998004F3C91 /* TaskType.swift */; };
 		FF798F942837CF60004F3C91 /* PresentDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798F932837CF60004F3C91 /* PresentDetails.swift */; };
 		FF798F962837D2CF004F3C91 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798F952837D2CF004F3C91 /* DataService.swift */; };
+		FF798F982838DA1D004F3C91 /* LittleTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798F972838DA1D004F3C91 /* LittleTaskCell.swift */; };
+		FF798F9A28391C3A004F3C91 /* AddNewTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798F9928391C3A004F3C91 /* AddNewTaskCell.swift */; };
+		FF798F9C28391CB3004F3C91 /* EditCatalogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798F9B28391CB3004F3C91 /* EditCatalogVC.swift */; };
+		FF798F9E283927AB004F3C91 /* CloseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798F9D283927AB004F3C91 /* CloseDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		FF798F902837C998004F3C91 /* TaskType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskType.swift; sourceTree = "<group>"; };
 		FF798F932837CF60004F3C91 /* PresentDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentDetails.swift; sourceTree = "<group>"; };
 		FF798F952837D2CF004F3C91 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		FF798F972838DA1D004F3C91 /* LittleTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleTaskCell.swift; sourceTree = "<group>"; };
+		FF798F9928391C3A004F3C91 /* AddNewTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskCell.swift; sourceTree = "<group>"; };
+		FF798F9B28391CB3004F3C91 /* EditCatalogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCatalogVC.swift; sourceTree = "<group>"; };
+		FF798F9D283927AB004F3C91 /* CloseDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +97,7 @@
 				FF798F922837CF4C004F3C91 /* Extantions */,
 				FF2C3057282155450059F2C3 /* MainVC.swift */,
 				FF798F8B2837C72F004F3C91 /* CreateCatalogVC.swift */,
+				FF798F9B28391CB3004F3C91 /* EditCatalogVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -97,6 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				FF2C3059282155FD0059F2C3 /* CatalogCell.swift */,
+				FF798F972838DA1D004F3C91 /* LittleTaskCell.swift */,
+				FF798F9928391C3A004F3C91 /* AddNewTaskCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -121,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				FF798F932837CF60004F3C91 /* PresentDetails.swift */,
+				FF798F9D283927AB004F3C91 /* CloseDelegate.swift */,
 			);
 			path = Extantions;
 			sourceTree = "<group>";
@@ -196,12 +208,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF798F9C28391CB3004F3C91 /* EditCatalogVC.swift in Sources */,
 				FF798F962837D2CF004F3C91 /* DataService.swift in Sources */,
+				FF798F9E283927AB004F3C91 /* CloseDelegate.swift in Sources */,
 				FF798F8C2837C72F004F3C91 /* CreateCatalogVC.swift in Sources */,
 				FF2C304828214A870059F2C3 /* Remember.xcdatamodeld in Sources */,
 				FF2C305A282155FD0059F2C3 /* CatalogCell.swift in Sources */,
 				FF2C3058282155450059F2C3 /* MainVC.swift in Sources */,
 				FF798F912837C998004F3C91 /* TaskType.swift in Sources */,
+				FF798F9A28391C3A004F3C91 /* AddNewTaskCell.swift in Sources */,
+				FF798F982838DA1D004F3C91 /* LittleTaskCell.swift in Sources */,
 				FF2C303E28214A870059F2C3 /* AppDelegate.swift in Sources */,
 				FF798F942837CF60004F3C91 /* PresentDetails.swift in Sources */,
 				FF2C304028214A870059F2C3 /* SceneDelegate.swift in Sources */,

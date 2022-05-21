@@ -34,8 +34,25 @@ class CreateCatalogVC: UIViewController {
     @IBAction func nextAction(_ sender: Any) {
         if let name = nameText.text {
             if name != "" {
-                DataService.storage.addNewCatalog(name: name, type: selectType) {
-                    print("next")
+                DataService.storage.isCatalogNameOk(name) { isOk in
+                    if !isOk {
+                        //error simple name
+                    } else {
+                        DataService.storage.addNewCatalog(name: name, type: self.selectType) {
+                            if let editCatalogVC = self.storyboard?.instantiateViewController(withIdentifier: "editCatalogVC") as? EditCatalogVC {
+                                editCatalogVC.modalPresentationStyle = .fullScreen
+                                editCatalogVC.delegate = self
+                                self.presentDetail(editCatalogVC) {
+                                    editCatalogVC.uploadData(name: name, type: self.selectType)
+                                    //self.dismiss(animated: false)
+                                }
+                            } else {
+                                //error
+                            }
+                        } onError: { message in
+                            //error
+                        }
+                    }
                 } onError: { message in
                     //error
                 }
@@ -63,4 +80,12 @@ class CreateCatalogVC: UIViewController {
         nameText.endEditing(true)
     }
 
+}
+
+extension CreateCatalogVC: CloseDelegate {
+    
+    func closeVC() {
+        dismiss(animated: false)
+    }
+    
 }
