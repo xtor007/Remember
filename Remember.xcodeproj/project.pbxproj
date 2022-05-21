@@ -24,6 +24,7 @@
 		FF798F9C28391CB3004F3C91 /* EditCatalogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798F9B28391CB3004F3C91 /* EditCatalogVC.swift */; };
 		FF798F9E283927AB004F3C91 /* CloseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798F9D283927AB004F3C91 /* CloseDelegate.swift */; };
 		FF798FA028393E6C004F3C91 /* EditTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798F9F28393E6C004F3C91 /* EditTaskVC.swift */; };
+		FF798FA228396CC9004F3C91 /* CatalogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798FA128396CC9004F3C91 /* CatalogVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		FF798F9B28391CB3004F3C91 /* EditCatalogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCatalogVC.swift; sourceTree = "<group>"; };
 		FF798F9D283927AB004F3C91 /* CloseDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseDelegate.swift; sourceTree = "<group>"; };
 		FF798F9F28393E6C004F3C91 /* EditTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskVC.swift; sourceTree = "<group>"; };
+		FF798FA128396CC9004F3C91 /* CatalogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				FF798F8B2837C72F004F3C91 /* CreateCatalogVC.swift */,
 				FF798F9B28391CB3004F3C91 /* EditCatalogVC.swift */,
 				FF798F9F28393E6C004F3C91 /* EditTaskVC.swift */,
+				FF798FA128396CC9004F3C91 /* CatalogVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				FF2C3058282155450059F2C3 /* MainVC.swift in Sources */,
 				FF798F912837C998004F3C91 /* TaskType.swift in Sources */,
 				FF798F9A28391C3A004F3C91 /* AddNewTaskCell.swift in Sources */,
+				FF798FA228396CC9004F3C91 /* CatalogVC.swift in Sources */,
 				FF798F982838DA1D004F3C91 /* LittleTaskCell.swift in Sources */,
 				FF2C303E28214A870059F2C3 /* AppDelegate.swift in Sources */,
 				FF798F942837CF60004F3C91 /* PresentDetails.swift in Sources */,

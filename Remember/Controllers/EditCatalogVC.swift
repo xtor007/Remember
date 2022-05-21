@@ -9,7 +9,7 @@ import UIKit
 
 class EditCatalogVC: UIViewController {
     
-    var delegate: CloseDelegate!
+    var delegate: CloseDelegate?
     
     var catalogName: String!
     var taskType: TaskType!
@@ -33,7 +33,9 @@ class EditCatalogVC: UIViewController {
     
     @IBAction func backAction(_ sender: Any) {
         dismissDetail {
-            self.delegate.closeVC()
+            if let delegate = self.delegate {
+                delegate.closeVC()
+            }
         }
     }
     

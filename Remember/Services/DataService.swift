@@ -114,4 +114,18 @@ class DataService {
         }
     }
     
+    func deleteCatalog(_ catalog: Catalog, onSucces: @escaping ()->(Void), onError: @escaping (String)->(Void)) {
+        guard let context = appDelegate?.persistentContainer.viewContext else {
+            onError("Something is not good")
+            return
+        }
+        context.delete(catalog)
+        do {
+            try context.save()
+            onSucces()
+        } catch {
+            onError(error.localizedDescription)
+        }
+    }
+    
 }

@@ -132,7 +132,121 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="34.399999999999999" y="83.208395802098963"/>
+            <point key="canvasLocation" x="28" y="-281"/>
+        </scene>
+        <!--CatalogVC-->
+        <scene sceneID="B3Q-11-rE5">
+            <objects>
+                <viewController storyboardIdentifier="catalogVC" id="kMK-la-QJL" customClass="CatalogVC" customModule="Remember" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OhS-5e-ddC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ShV-5Y-nzo">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Astronomy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3Z-OM-b4g">
+                                        <rect key="frame" x="73" y="50.5" width="229" height="59"/>
+                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="50"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j14-qJ-CrK">
+                                        <rect key="frame" x="9" y="57" width="52" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="52" id="1Lm-pk-C7X"/>
+                                            <constraint firstAttribute="height" constant="50" id="Yvg-DK-l6f"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="backAction:" destination="kMK-la-QJL" eventType="touchUpInside" id="RMU-mJ-oIH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstItem="Y3Z-OM-b4g" firstAttribute="centerX" secondItem="ShV-5Y-nzo" secondAttribute="centerX" id="Cew-ih-Uk8"/>
+                                    <constraint firstAttribute="bottom" secondItem="j14-qJ-CrK" secondAttribute="bottom" constant="13" id="GaE-7s-duV"/>
+                                    <constraint firstItem="j14-qJ-CrK" firstAttribute="leading" secondItem="ShV-5Y-nzo" secondAttribute="leading" constant="9" id="QIa-WU-KXc"/>
+                                    <constraint firstAttribute="height" constant="120" id="Rtb-dA-lhT"/>
+                                    <constraint firstItem="Y3Z-OM-b4g" firstAttribute="centerY" secondItem="ShV-5Y-nzo" secondAttribute="centerY" constant="20" id="iFj-gs-zoA"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfy-9N-pwO">
+                                <rect key="frame" x="16" y="168" width="343" height="62"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="3rZ-SB-k1k"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="edit">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="editAction:" destination="kMK-la-QJL" eventType="touchUpInside" id="nJe-aP-lys"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocj-jS-zXm">
+                                <rect key="frame" x="16" y="251" width="343" height="62"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="L8L-l8-frM"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="delete">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="deleteAction:" destination="kMK-la-QJL" eventType="touchUpInside" id="Pq2-bh-OHM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THf-Yg-NQ3">
+                                <rect key="frame" x="87" y="447" width="200" height="200"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="THf-Yg-NQ3" secondAttribute="height" multiplier="1:1" id="s4L-BA-vge"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="GO">
+                                    <fontDescription key="titleFontDescription" name="Chalkduster" family="Chalkduster" pointSize="80"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="goAction:" destination="kMK-la-QJL" eventType="touchUpInside" id="dU6-Hz-JHu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ut4-lH-d4R"/>
+                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                        <constraints>
+                            <constraint firstItem="vfy-9N-pwO" firstAttribute="top" secondItem="ShV-5Y-nzo" secondAttribute="bottom" constant="48" id="8V1-Cw-z5N"/>
+                            <constraint firstItem="ShV-5Y-nzo" firstAttribute="trailing" secondItem="Ut4-lH-d4R" secondAttribute="trailing" id="CP9-di-d46"/>
+                            <constraint firstItem="Ut4-lH-d4R" firstAttribute="trailing" secondItem="ocj-jS-zXm" secondAttribute="trailing" constant="16" id="D1W-Go-Hce"/>
+                            <constraint firstItem="THf-Yg-NQ3" firstAttribute="leading" secondItem="Ut4-lH-d4R" secondAttribute="leading" constant="87" id="HDc-IS-fKp"/>
+                            <constraint firstItem="ocj-jS-zXm" firstAttribute="leading" secondItem="Ut4-lH-d4R" secondAttribute="leading" constant="16" id="TIw-JF-RLt"/>
+                            <constraint firstItem="Ut4-lH-d4R" firstAttribute="trailing" secondItem="vfy-9N-pwO" secondAttribute="trailing" constant="16" id="Wlf-98-z0P"/>
+                            <constraint firstItem="ocj-jS-zXm" firstAttribute="top" secondItem="vfy-9N-pwO" secondAttribute="bottom" constant="21" id="ZIb-PF-xM8"/>
+                            <constraint firstItem="Ut4-lH-d4R" firstAttribute="bottom" secondItem="THf-Yg-NQ3" secondAttribute="bottom" constant="20" id="fgF-vX-Tfg"/>
+                            <constraint firstItem="ShV-5Y-nzo" firstAttribute="top" secondItem="OhS-5e-ddC" secondAttribute="top" id="itE-Fw-7tE"/>
+                            <constraint firstItem="Ut4-lH-d4R" firstAttribute="trailing" secondItem="THf-Yg-NQ3" secondAttribute="trailing" constant="88" id="nf0-Qs-46c"/>
+                            <constraint firstItem="ShV-5Y-nzo" firstAttribute="leading" secondItem="Ut4-lH-d4R" secondAttribute="leading" id="s4P-60-Iep"/>
+                            <constraint firstItem="vfy-9N-pwO" firstAttribute="leading" secondItem="Ut4-lH-d4R" secondAttribute="leading" constant="16" id="sDb-i3-qFN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="goButton" destination="THf-Yg-NQ3" id="fUB-92-txl"/>
+                        <outlet property="nameLabel" destination="Y3Z-OM-b4g" id="Y89-Pd-sYu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2EK-ua-PNH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="727.20000000000005" y="-626.53673163418296"/>
         </scene>
         <!--Create CatalogVC-->
         <scene sceneID="Wqu-oX-QMw">
@@ -429,7 +543,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tMG-HA-9zL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1461.5999999999999" y="81.409295352323838"/>
+            <point key="canvasLocation" x="1468" y="-251"/>
         </scene>
         <!--Edit TaskVC-->
         <scene sceneID="0Dv-Bc-36P">
@@ -596,7 +710,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2200.8000000000002" y="80.50974512743629"/>
+            <point key="canvasLocation" x="2220" y="-251"/>
         </scene>
     </scenes>
     <resources>
@@ -616,8 +730,14 @@
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

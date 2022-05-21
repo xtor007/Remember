@@ -84,4 +84,13 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let catalogVC = storyboard?.instantiateViewController(withIdentifier: "catalogVC") as? CatalogVC {
+            catalogVC.modalPresentationStyle = .fullScreen
+            presentDetail(catalogVC) {
+                catalogVC.uploadData(self.catalogs[indexPath.row])
+            }
+        }
+    }
+    
 }
