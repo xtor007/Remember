@@ -72,6 +72,11 @@ class EditTaskVC: UIViewController {
         chooseImage()
     }
     
+    @IBAction func tap(_ sender: Any) {
+        taskText.endEditing(true)
+        answerText.endEditing(true)
+    }
+    
     func uploadData(name: String, type: TaskType, task: Task? = nil) {
         self.type = type
         self.catalog = name

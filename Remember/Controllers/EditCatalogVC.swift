@@ -90,4 +90,20 @@ extension EditCatalogVC: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let swipeDelete = UIContextualAction(style: .normal, title: "DELETE") { action, view, succes in
+            DataService.storage.deleteTask(self.tasks[indexPath.row]) {
+                self.getData()
+            } onError: { message in
+                //error
+            }
+
+        }
+        swipeDelete.backgroundColor = .systemRed
+        let actions = [swipeDelete]
+        let res = UISwipeActionsConfiguration(actions: actions)
+        res.performsFirstActionWithFullSwipe = true
+        return res
+    }
+    
 }

@@ -100,4 +100,18 @@ class DataService {
         }
     }
     
+    func deleteTask(_ task: Task, onSucces: @escaping ()->(Void), onError: @escaping (String)->(Void)) {
+        guard let context = appDelegate?.persistentContainer.viewContext else {
+            onError("Something is not good")
+            return
+        }
+        context.delete(task)
+        do {
+            try context.save()
+            onSucces()
+        } catch {
+            onError(error.localizedDescription)
+        }
+    }
+    
 }
