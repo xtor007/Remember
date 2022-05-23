@@ -40,29 +40,23 @@ class MainVC: UIViewController {
     }
     
     @IBAction func addAction(_ sender: Any) {
-        let startFrame = addButton.frame
-        UIView.animate(withDuration: 0.5, delay: 0.2, options: .curveLinear) {
-            let height = self.view.frame.height*2
-            let screenWidth = self.view.frame.width
-            self.addButton.frame = CGRect(x: screenWidth-50-height/2, y: -85, width: height, height: height)
-            self.addButton.layer.cornerRadius = height/2
-            self.addButtonHeighConstraint.constant = height
-            self.addButtonWidthConstraint.constant = height
-            self.addButtonTrailingConstraint.constant = 50 - height/2
-            self.addButtonBottomConstraint.constant = height/2 - 50
+        addButton.tintColor = .systemYellow
+        UIView.animate(withDuration: 0.5, delay: 0.2, options: .curveEaseIn) {
+            let magnificationFactor: CGFloat = 20
+            self.addButton.transform = CGAffineTransform(scaleX: magnificationFactor, y: magnificationFactor)
         } completion: { isFinish in
-            if let createCatalogVC = self.storyboard?.instantiateViewController(withIdentifier: "createCatalog") as? CreateCatalogVC {
-                createCatalogVC.modalPresentationStyle = .fullScreen
-                self.present(createCatalogVC, animated: false) {
-                    self.addButton.frame = startFrame
-                    self.addButton.layer.cornerRadius = startFrame.width/2
-                    self.addButtonHeighConstraint.constant = 80
-                    self.addButtonWidthConstraint.constant = 80
-                    self.addButtonTrailingConstraint.constant = 20
-                    self.addButtonBottomConstraint.constant = -20
+            if isFinish {
+                if let createCatalogVC = self.storyboard?.instantiateViewController(withIdentifier: "createCatalog") as? CreateCatalogVC {
+                    createCatalogVC.modalPresentationStyle = .fullScreen
+                    self.present(createCatalogVC, animated: false) {
+                        self.addButton.transform = CGAffineTransform.identity
+                        self.addButton.tintColor = .white
+                    }
+                } else {
+                    //ERROR
                 }
             } else {
-                //ERROR
+                //error
             }
         }
     }

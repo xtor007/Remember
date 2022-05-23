@@ -206,6 +206,13 @@
                                     <action selector="deleteAction:" destination="kMK-la-QJL" eventType="touchUpInside" id="Pq2-bh-OHM"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oB1-6A-Aus">
+                                <rect key="frame" x="113" y="472.5" width="149" height="149"/>
+                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oB1-6A-Aus" secondAttribute="height" multiplier="1:1" id="e9p-Xt-hEe"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THf-Yg-NQ3">
                                 <rect key="frame" x="87" y="447" width="200" height="200"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
@@ -224,27 +231,40 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ut4-lH-d4R"/>
                         <color key="backgroundColor" systemColor="systemGray2Color"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="vfy-9N-pwO" firstAttribute="top" secondItem="ShV-5Y-nzo" secondAttribute="bottom" constant="48" id="8V1-Cw-z5N"/>
                             <constraint firstItem="ShV-5Y-nzo" firstAttribute="trailing" secondItem="Ut4-lH-d4R" secondAttribute="trailing" id="CP9-di-d46"/>
                             <constraint firstItem="Ut4-lH-d4R" firstAttribute="trailing" secondItem="ocj-jS-zXm" secondAttribute="trailing" constant="16" id="D1W-Go-Hce"/>
                             <constraint firstItem="THf-Yg-NQ3" firstAttribute="leading" secondItem="Ut4-lH-d4R" secondAttribute="leading" constant="87" id="HDc-IS-fKp"/>
+                            <constraint firstItem="oB1-6A-Aus" firstAttribute="leading" secondItem="Ut4-lH-d4R" secondAttribute="leading" constant="113" id="SLB-Vi-lde"/>
                             <constraint firstItem="ocj-jS-zXm" firstAttribute="leading" secondItem="Ut4-lH-d4R" secondAttribute="leading" constant="16" id="TIw-JF-RLt"/>
                             <constraint firstItem="Ut4-lH-d4R" firstAttribute="trailing" secondItem="vfy-9N-pwO" secondAttribute="trailing" constant="16" id="Wlf-98-z0P"/>
+                            <constraint firstItem="Ut4-lH-d4R" firstAttribute="bottom" secondItem="oB1-6A-Aus" secondAttribute="bottom" constant="45" id="XSj-xf-nwT"/>
                             <constraint firstItem="ocj-jS-zXm" firstAttribute="top" secondItem="vfy-9N-pwO" secondAttribute="bottom" constant="21" id="ZIb-PF-xM8"/>
+                            <constraint firstItem="Ut4-lH-d4R" firstAttribute="trailing" secondItem="oB1-6A-Aus" secondAttribute="trailing" constant="113" id="f4b-La-ypP"/>
                             <constraint firstItem="Ut4-lH-d4R" firstAttribute="bottom" secondItem="THf-Yg-NQ3" secondAttribute="bottom" constant="20" id="fgF-vX-Tfg"/>
                             <constraint firstItem="ShV-5Y-nzo" firstAttribute="top" secondItem="OhS-5e-ddC" secondAttribute="top" id="itE-Fw-7tE"/>
                             <constraint firstItem="Ut4-lH-d4R" firstAttribute="trailing" secondItem="THf-Yg-NQ3" secondAttribute="trailing" constant="88" id="nf0-Qs-46c"/>
                             <constraint firstItem="ShV-5Y-nzo" firstAttribute="leading" secondItem="Ut4-lH-d4R" secondAttribute="leading" id="s4P-60-Iep"/>
                             <constraint firstItem="vfy-9N-pwO" firstAttribute="leading" secondItem="Ut4-lH-d4R" secondAttribute="leading" constant="16" id="sDb-i3-qFN"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="mdT-2P-STf" appends="YES" id="yfH-g5-PS9"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="goButton" destination="THf-Yg-NQ3" id="fUB-92-txl"/>
                         <outlet property="nameLabel" destination="Y3Z-OM-b4g" id="Y89-Pd-sYu"/>
+                        <outlet property="starImage" destination="oB1-6A-Aus" id="qs9-vX-NpD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2EK-ua-PNH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="mdT-2P-STf">
+                    <connections>
+                        <action selector="swipeAction:" destination="kMK-la-QJL" id="iU5-MG-I6o"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="727.20000000000005" y="-626.53673163418296"/>
         </scene>
@@ -718,6 +738,7 @@
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="plus.square.fill.on.square.fill" catalog="system" width="128" height="113"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -12,6 +12,7 @@ class CatalogVC: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     
     @IBOutlet weak var goButton: UIButton!
+    @IBOutlet weak var starImage: UIImageView!
     
     var catalog: Catalog!
     let typeByString = [
@@ -43,6 +44,15 @@ class CatalogVC: UIViewController {
         }
     }
     
+    @IBAction func swipeAction(_ sender: Any) {
+        if let swipe = sender as? UISwipeGestureRecognizer {
+            if swipe.direction == .right {
+                backAction(0)
+            }
+        }
+    }
+    
+    
     @IBAction func deleteAction(_ sender: Any) {
         DataService.storage.deleteCatalog(catalog) {
             self.backAction(0)
@@ -52,6 +62,31 @@ class CatalogVC: UIViewController {
     }
     
     @IBAction func goAction(_ sender: Any) {
+        goButton.setTitle("", for: .normal)
+        UIView.animate(withDuration: 0.5, delay: 0.2, options: .curveLinear) {
+            let reductionFactor: CGFloat = 0.4
+            self.goButton.transform = CGAffineTransform(scaleX: reductionFactor, y: reductionFactor)
+        } completion: { isFinish in
+            if isFinish {
+                self.goToExercise()
+            } else {
+                //error
+            }
+        }
+
+    }
+    
+    private func goToExercise() {
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn) {
+            let magnificationFactor: CGFloat = 20
+            self.starImage.transform = CGAffineTransform(scaleX: magnificationFactor, y: magnificationFactor)
+        } completion: { isFinish in
+            if isFinish {
+                
+            } else {
+                //error
+            }
+        }
     }
 
 }
