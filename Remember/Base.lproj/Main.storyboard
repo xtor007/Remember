@@ -655,72 +655,69 @@
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SnV-gd-24u">
-                                <rect key="frame" x="16" y="266" width="55" height="33"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXT-D2-kSe">
+                                <rect key="frame" x="18" y="280" width="69" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="55" id="Yhn-fT-5rr"/>
-                                    <constraint firstAttribute="height" constant="33" id="ZsJ-ZH-fdK"/>
+                                    <constraint firstAttribute="height" constant="22" id="Iea-Au-JGb"/>
+                                    <constraint firstAttribute="width" constant="69" id="J3A-LU-N2q"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Fcb-pC-jQ5">
-                                <rect key="frame" x="16" y="495" width="343" height="125"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="g3J-wf-vFv">
+                                <rect key="frame" x="16" y="275" width="343" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="125" id="Ia7-S3-mE6"/>
+                                    <constraint firstAttribute="height" constant="31" id="2GN-3V-gPh"/>
+                                    <constraint firstAttribute="width" constant="343" id="H76-Md-9O1"/>
                                 </constraints>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1p-9E-YWM">
-                                <rect key="frame" x="16" y="447" width="88" height="33"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="UDF-ca-t4O"/>
-                                    <constraint firstAttribute="width" constant="88" id="Zpa-R8-6nC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="25"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <segments>
+                                    <segment title="Task"/>
+                                    <segment title="Answer"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentControllerAction:" destination="MaQ-N4-Dfc" eventType="valueChanged" id="w4H-qh-eXW"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uhQ-QS-JwI"/>
                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="MA6-ha-fLV" firstAttribute="trailing" secondItem="uhQ-QS-JwI" secondAttribute="trailing" id="0Nl-Xl-mx0"/>
-                            <constraint firstItem="yL7-AL-zC6" firstAttribute="top" secondItem="SnV-gd-24u" secondAttribute="bottom" constant="15" id="2Km-jX-kTT"/>
                             <constraint firstItem="7oV-HW-vIl" firstAttribute="top" secondItem="MA6-ha-fLV" secondAttribute="bottom" constant="58" id="2ZO-Xz-9Sc"/>
                             <constraint firstItem="uhQ-QS-JwI" firstAttribute="trailing" secondItem="yL7-AL-zC6" secondAttribute="trailing" constant="16" id="3O7-B0-wBR"/>
-                            <constraint firstItem="SnV-gd-24u" firstAttribute="leading" secondItem="uhQ-QS-JwI" secondAttribute="leading" constant="16" id="4VO-WP-jsG"/>
                             <constraint firstItem="yL7-AL-zC6" firstAttribute="leading" secondItem="uhQ-QS-JwI" secondAttribute="leading" constant="16" id="Apu-lV-KVx"/>
                             <constraint firstItem="fEA-Gv-qmj" firstAttribute="top" secondItem="MA6-ha-fLV" secondAttribute="bottom" constant="41" id="DqN-4G-Fgp"/>
                             <constraint firstItem="7oV-HW-vIl" firstAttribute="leading" secondItem="fEA-Gv-qmj" secondAttribute="trailing" constant="22" id="Gct-dG-0GO"/>
                             <constraint firstItem="fEA-Gv-qmj" firstAttribute="leading" secondItem="uhQ-QS-JwI" secondAttribute="leading" constant="16" id="IDx-I9-jQA"/>
-                            <constraint firstItem="U1p-9E-YWM" firstAttribute="top" secondItem="yL7-AL-zC6" secondAttribute="bottom" constant="8" id="LTe-Sh-L0B"/>
                             <constraint firstItem="MA6-ha-fLV" firstAttribute="leading" secondItem="uhQ-QS-JwI" secondAttribute="leading" id="PJQ-UV-gV0"/>
-                            <constraint firstItem="SnV-gd-24u" firstAttribute="top" secondItem="fEA-Gv-qmj" secondAttribute="bottom" constant="8" id="Y0T-su-QBc"/>
-                            <constraint firstItem="U1p-9E-YWM" firstAttribute="leading" secondItem="uhQ-QS-JwI" secondAttribute="leading" constant="16" id="YsG-V6-kbP"/>
+                            <constraint firstItem="yL7-AL-zC6" firstAttribute="top" secondItem="g3J-wf-vFv" secondAttribute="bottom" constant="8" id="SvK-kC-vVd"/>
+                            <constraint firstItem="g3J-wf-vFv" firstAttribute="top" secondItem="fEA-Gv-qmj" secondAttribute="bottom" constant="17" id="Xkb-LK-bRZ"/>
                             <constraint firstItem="MA6-ha-fLV" firstAttribute="top" secondItem="yK1-Pg-Wgl" secondAttribute="top" id="Z9d-3f-yKH"/>
-                            <constraint firstItem="Fcb-pC-jQ5" firstAttribute="top" secondItem="U1p-9E-YWM" secondAttribute="bottom" constant="15" id="gRG-Gy-HhT"/>
+                            <constraint firstItem="oXT-D2-kSe" firstAttribute="top" secondItem="fEA-Gv-qmj" secondAttribute="bottom" constant="22" id="nTB-Ej-nd2"/>
+                            <constraint firstItem="oXT-D2-kSe" firstAttribute="leading" secondItem="uhQ-QS-JwI" secondAttribute="leading" constant="18" id="s90-om-zI6"/>
+                            <constraint firstItem="g3J-wf-vFv" firstAttribute="leading" secondItem="uhQ-QS-JwI" secondAttribute="leading" constant="16" id="sew-x1-Uid"/>
                             <constraint firstItem="uhQ-QS-JwI" firstAttribute="trailing" secondItem="7oV-HW-vIl" secondAttribute="trailing" constant="16" id="vO3-OE-v1O"/>
-                            <constraint firstItem="uhQ-QS-JwI" firstAttribute="trailing" secondItem="Fcb-pC-jQ5" secondAttribute="trailing" constant="16" id="wb7-ha-ynG"/>
-                            <constraint firstItem="Fcb-pC-jQ5" firstAttribute="leading" secondItem="uhQ-QS-JwI" secondAttribute="leading" constant="16" id="xzQ-gE-Ayn"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Iuc-km-nm5" appends="YES" id="rNm-Eb-94h"/>
+                            <outletCollection property="gestureRecognizers" destination="VmQ-Wm-9fh" appends="YES" id="4yk-1a-WJX"/>
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="answerText" destination="Fcb-pC-jQ5" id="jQn-t3-fBp"/>
+                        <outlet property="answerLabel" destination="oXT-D2-kSe" id="f8n-5f-kV2"/>
                         <outlet property="catalogNameLabel" destination="AT1-19-pAq" id="wS8-IH-2Lf"/>
                         <outlet property="loadPhotoButton" destination="7oV-HW-vIl" id="7Kk-YF-Fjc"/>
+                        <outlet property="segmentController" destination="g3J-wf-vFv" id="WOy-hh-2p7"/>
                         <outlet property="taskImage" destination="fEA-Gv-qmj" id="fWg-XD-CIh"/>
-                        <outlet property="taskLabel" destination="SnV-gd-24u" id="42Q-Qn-dkc"/>
-                        <outlet property="taskText" destination="yL7-AL-zC6" id="Mim-9k-5bb"/>
+                        <outlet property="textView" destination="yL7-AL-zC6" id="Mim-9k-5bb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yed-7K-tvp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -729,8 +726,13 @@
                         <action selector="tap:" destination="MaQ-N4-Dfc" id="DJA-X3-tg3"/>
                     </connections>
                 </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="VmQ-Wm-9fh">
+                    <connections>
+                        <action selector="swipeAction:" destination="MaQ-N4-Dfc" id="m0u-5z-s9i"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2220" y="-251"/>
+            <point key="canvasLocation" x="2220" y="-251.42428785607197"/>
         </scene>
     </scenes>
     <resources>

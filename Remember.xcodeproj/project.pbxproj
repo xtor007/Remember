@@ -25,6 +25,7 @@
 		FF798F9E283927AB004F3C91 /* CloseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798F9D283927AB004F3C91 /* CloseDelegate.swift */; };
 		FF798FA028393E6C004F3C91 /* EditTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798F9F28393E6C004F3C91 /* EditTaskVC.swift */; };
 		FF798FA228396CC9004F3C91 /* CatalogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798FA128396CC9004F3C91 /* CatalogVC.swift */; };
+		FF798FA4283BBB0D004F3C91 /* DeleteTaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798FA3283BBB0D004F3C91 /* DeleteTaskDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		FF798F9D283927AB004F3C91 /* CloseDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseDelegate.swift; sourceTree = "<group>"; };
 		FF798F9F28393E6C004F3C91 /* EditTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskVC.swift; sourceTree = "<group>"; };
 		FF798FA128396CC9004F3C91 /* CatalogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogVC.swift; sourceTree = "<group>"; };
+		FF798FA3283BBB0D004F3C91 /* DeleteTaskDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTaskDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 			children = (
 				FF798F932837CF60004F3C91 /* PresentDetails.swift */,
 				FF798F9D283927AB004F3C91 /* CloseDelegate.swift */,
+				FF798FA3283BBB0D004F3C91 /* DeleteTaskDelegate.swift */,
 			);
 			path = Extantions;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				FF798FA028393E6C004F3C91 /* EditTaskVC.swift in Sources */,
 				FF798F962837D2CF004F3C91 /* DataService.swift in Sources */,
 				FF798F9E283927AB004F3C91 /* CloseDelegate.swift in Sources */,
+				FF798FA4283BBB0D004F3C91 /* DeleteTaskDelegate.swift in Sources */,
 				FF798F8C2837C72F004F3C91 /* CreateCatalogVC.swift in Sources */,
 				FF2C304828214A870059F2C3 /* Remember.xcdatamodeld in Sources */,
 				FF2C305A282155FD0059F2C3 /* CatalogCell.swift in Sources */,

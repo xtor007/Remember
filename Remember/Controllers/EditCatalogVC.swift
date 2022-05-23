@@ -9,7 +9,7 @@ import UIKit
 
 class EditCatalogVC: UIViewController {
     
-    var delegate: CloseDelegate?
+    var closeDelegate: CloseDelegate?
     
     var catalogName: String!
     var taskType: TaskType!
@@ -33,7 +33,7 @@ class EditCatalogVC: UIViewController {
     
     @IBAction func backAction(_ sender: Any) {
         dismissDetail {
-            if let delegate = self.delegate {
+            if let delegate = self.closeDelegate {
                 delegate.closeVC()
             }
         }
@@ -88,9 +88,7 @@ extension EditCatalogVC: UITableViewDelegate, UITableViewDataSource {
                 } else {
                     let task = self.tasks[indexPath.row]
                     editTaskVC.uploadData(name: self.catalogName, type: self.taskType, task: task)
-                    DataService.storage.deleteTask(task) {} onError: { message in
-                        //error
-                    }
+                    editTaskVC.deleteTaskDelegate = self
                 }
             }
         }
@@ -109,6 +107,16 @@ extension EditCatalogVC: UITableViewDelegate, UITableViewDataSource {
         let res = UISwipeActionsConfiguration(actions: actions)
         res.performsFirstActionWithFullSwipe = true
         return res
+    }
+    
+}
+
+extension EditCatalogVC: DeleteTaskDelegate {
+    
+    func deleteTask(_ task: Task) {
+        DataService.storage.deleteTask(task) {} onError: { message in
+            //error
+        }
     }
     
 }

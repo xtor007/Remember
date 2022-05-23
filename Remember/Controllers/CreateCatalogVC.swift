@@ -41,7 +41,7 @@ class CreateCatalogVC: UIViewController {
                         DataService.storage.addNewCatalog(name: name, type: self.selectType) {
                             if let editCatalogVC = self.storyboard?.instantiateViewController(withIdentifier: "editCatalogVC") as? EditCatalogVC {
                                 editCatalogVC.modalPresentationStyle = .fullScreen
-                                editCatalogVC.delegate = self
+                                editCatalogVC.closeDelegate = self
                                 self.presentDetail(editCatalogVC) {
                                     editCatalogVC.uploadData(name: name, type: self.selectType)
                                     //self.dismiss(animated: false)
