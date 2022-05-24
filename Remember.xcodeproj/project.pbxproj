@@ -26,6 +26,9 @@
 		FF798FA028393E6C004F3C91 /* EditTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798F9F28393E6C004F3C91 /* EditTaskVC.swift */; };
 		FF798FA228396CC9004F3C91 /* CatalogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798FA128396CC9004F3C91 /* CatalogVC.swift */; };
 		FF798FA4283BBB0D004F3C91 /* DeleteTaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798FA3283BBB0D004F3C91 /* DeleteTaskDelegate.swift */; };
+		FF798FA6283D1428004F3C91 /* ExerciseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798FA5283D1428004F3C91 /* ExerciseVC.swift */; };
+		FF798FA9283D1613004F3C91 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798FA8283D1613004F3C91 /* Game.swift */; };
+		FF798FAB283D2345004F3C91 /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798FAA283D2345004F3C91 /* ShowAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		FF798F9F28393E6C004F3C91 /* EditTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskVC.swift; sourceTree = "<group>"; };
 		FF798FA128396CC9004F3C91 /* CatalogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogVC.swift; sourceTree = "<group>"; };
 		FF798FA3283BBB0D004F3C91 /* DeleteTaskDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTaskDelegate.swift; sourceTree = "<group>"; };
+		FF798FA5283D1428004F3C91 /* ExerciseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseVC.swift; sourceTree = "<group>"; };
+		FF798FA8283D1613004F3C91 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		FF798FAA283D2345004F3C91 /* ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,7 @@
 		FF2C303C28214A870059F2C3 /* Remember */ = {
 			isa = PBXGroup;
 			children = (
+				FF798FA7283D15FD004F3C91 /* Game */,
 				FF798F8D2837C927004F3C91 /* Enums */,
 				FF2C305628214AD70059F2C3 /* Services */,
 				FF2C305528214AB60059F2C3 /* View */,
@@ -106,6 +113,7 @@
 				FF798F9B28391CB3004F3C91 /* EditCatalogVC.swift */,
 				FF798F9F28393E6C004F3C91 /* EditTaskVC.swift */,
 				FF798FA128396CC9004F3C91 /* CatalogVC.swift */,
+				FF798FA5283D1428004F3C91 /* ExerciseVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -142,8 +150,17 @@
 				FF798F932837CF60004F3C91 /* PresentDetails.swift */,
 				FF798F9D283927AB004F3C91 /* CloseDelegate.swift */,
 				FF798FA3283BBB0D004F3C91 /* DeleteTaskDelegate.swift */,
+				FF798FAA283D2345004F3C91 /* ShowAlert.swift */,
 			);
 			path = Extantions;
+			sourceTree = "<group>";
+		};
+		FF798FA7283D15FD004F3C91 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				FF798FA8283D1613004F3C91 /* Game.swift */,
+			);
+			path = Game;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,16 +235,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF798F9C28391CB3004F3C91 /* EditCatalogVC.swift in Sources */,
+				FF798FA9283D1613004F3C91 /* Game.swift in Sources */,
 				FF798FA028393E6C004F3C91 /* EditTaskVC.swift in Sources */,
 				FF798F962837D2CF004F3C91 /* DataService.swift in Sources */,
 				FF798F9E283927AB004F3C91 /* CloseDelegate.swift in Sources */,
 				FF798FA4283BBB0D004F3C91 /* DeleteTaskDelegate.swift in Sources */,
+				FF798FA6283D1428004F3C91 /* ExerciseVC.swift in Sources */,
 				FF798F8C2837C72F004F3C91 /* CreateCatalogVC.swift in Sources */,
 				FF2C304828214A870059F2C3 /* Remember.xcdatamodeld in Sources */,
 				FF2C305A282155FD0059F2C3 /* CatalogCell.swift in Sources */,
 				FF2C3058282155450059F2C3 /* MainVC.swift in Sources */,
 				FF798F912837C998004F3C91 /* TaskType.swift in Sources */,
 				FF798F9A28391C3A004F3C91 /* AddNewTaskCell.swift in Sources */,
+				FF798FAB283D2345004F3C91 /* ShowAlert.swift in Sources */,
 				FF798FA228396CC9004F3C91 /* CatalogVC.swift in Sources */,
 				FF798F982838DA1D004F3C91 /* LittleTaskCell.swift in Sources */,
 				FF2C303E28214A870059F2C3 /* AppDelegate.swift in Sources */,

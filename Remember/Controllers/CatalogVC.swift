@@ -82,11 +82,32 @@ class CatalogVC: UIViewController {
             self.starImage.transform = CGAffineTransform(scaleX: magnificationFactor, y: magnificationFactor)
         } completion: { isFinish in
             if isFinish {
-                
+                if let exerciseVC = self.storyboard?.instantiateViewController(withIdentifier: "exerciseVC") as? ExerciseVC {
+                    exerciseVC.modalPresentationStyle = .fullScreen
+                    DataService.storage.getTasks(forCatalog: self.catalog.name!) { tasks in
+                        self.present(exerciseVC, animated: false) {
+                            exerciseVC.uploadData(tasks: tasks)
+                            exerciseVC.closeDelegate = self
+                            self.starImage.transform = CGAffineTransform.identity
+                        }
+                    } onError: { message in
+                        //error
+                    }
+                } else {
+                    //error
+                }
             } else {
                 //error
             }
         }
     }
 
+}
+
+extension CatalogVC: CloseDelegate {
+    
+    func closeVC() {
+        dismiss(animated: false)
+    }
+    
 }
