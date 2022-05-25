@@ -1134,12 +1134,69 @@
             </objects>
             <point key="canvasLocation" x="2220" y="-251.42428785607197"/>
         </scene>
+        <!--FinalVC-->
+        <scene sceneID="la6-5p-i1j">
+            <objects>
+                <viewController storyboardIdentifier="finalVC" id="Jko-AZ-WIe" customClass="FinalVC" customModule="Remember" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YG8-Hk-ad6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It's final!👏👏👏" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e72-XZ-gFM">
+                                <rect key="frame" x="28" y="153" width="318" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="yrG-pT-L1c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfb-Vw-Cy1">
+                                <rect key="frame" x="137.5" y="519" width="100" height="100"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="i4e-yX-lPa"/>
+                                    <constraint firstAttribute="width" constant="100" id="y3h-De-f3Y"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="house" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="50"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="homeAction:" destination="wvv-ZH-mLf" eventType="touchUpInside" id="B8Y-Z0-zfs"/>
+                                    <action selector="homeAction:" destination="Jko-AZ-WIe" eventType="touchUpInside" id="GEX-yL-x6p"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="YZN-KP-cek"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstItem="e72-XZ-gFM" firstAttribute="leading" secondItem="YZN-KP-cek" secondAttribute="leading" constant="28" id="027-ag-Ait"/>
+                            <constraint firstItem="YZN-KP-cek" firstAttribute="bottom" secondItem="jfb-Vw-Cy1" secondAttribute="bottom" constant="48" id="45C-ba-plR"/>
+                            <constraint firstItem="jfb-Vw-Cy1" firstAttribute="centerX" secondItem="YG8-Hk-ad6" secondAttribute="centerX" id="9k5-th-INv"/>
+                            <constraint firstItem="e72-XZ-gFM" firstAttribute="top" secondItem="YZN-KP-cek" secondAttribute="top" constant="153" id="ITD-nz-IJw"/>
+                            <constraint firstItem="YZN-KP-cek" firstAttribute="trailing" secondItem="e72-XZ-gFM" secondAttribute="trailing" constant="29" id="Yt7-Mb-mMQ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B65-2k-zEV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="wvv-ZH-mLf" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2996" y="-561.76911544227892"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrow.up.bin.fill" catalog="system" width="128" height="93"/>
         <image name="checkmark.seal.fill" catalog="system" width="128" height="128"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="clear.fill" catalog="system" width="128" height="114"/>
+        <image name="house" catalog="system" width="128" height="106"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="plus.square.fill.on.square.fill" catalog="system" width="128" height="113"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>

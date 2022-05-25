@@ -24,12 +24,22 @@ class ExerciseVC: UIViewController {
     var startQuiz: ((Task,[String])->(Void))!
     
     var isNeedInitTask = false
+    var isFinish = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        if isFinish {
+            if let finalVC = self.storyboard?.instantiateViewController(withIdentifier: "finalVC") as? FinalVC {
+                finalVC.modalPresentationStyle = .fullScreen
+                self.presentDetail(finalVC) {
+                    finalVC.closeDelegate = self
+                }
+            }
+            return
+        }
         if isNeedInitTask {
             initTask()
             isNeedInitTask = false
@@ -38,7 +48,13 @@ class ExerciseVC: UIViewController {
     
     func uploadData(tasks: [Task]) {
         game = Game(tasks: tasks, onFinish: {
-            print("finish")
+            self.isFinish = true
+            if let finalVC = self.storyboard?.instantiateViewController(withIdentifier: "finalVC") as? FinalVC {
+                finalVC.modalPresentationStyle = .fullScreen
+                self.presentDetail(finalVC) {
+                    finalVC.closeDelegate = self
+                }
+            }
         })
         changeValues = { leftValue, passedValue, forwardValue in
             self.leftLabel.text = leftValue.description
@@ -112,6 +128,16 @@ extension ExerciseVC: QuizAnswerDelegate {
     func postAnswer(isRight: Bool) {
         game.quizAnswer(isRight: isRight, changeValues: changeValues)
         isNeedInitTask = true
+    }
+    
+}
+
+extension ExerciseVC: CloseDelegate {
+    
+    func closeVC() {
+        dismiss(animated: false) {
+            self.closeDelegate.closeVC()
+        }
     }
     
 }
