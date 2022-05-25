@@ -13,6 +13,8 @@ class Game {
     private var passed = [Task]()
     private var forward = [Task]()
     
+    private var summaryCount = 0
+    
     private var isQuizStart = false
     
     private var currentTask: Task?
@@ -25,6 +27,7 @@ class Game {
         left = tasks
         currentTask = nil
         self.onFinish = onFinish
+        summaryCount = tasks.count
     }
     
     func getNewTask(changeValues: @escaping (Int,Int,Int)->(Void)) -> Task? {
@@ -39,7 +42,7 @@ class Game {
         if isKnown {
             let chance = 0.2
             let randValue = Double.random(in: 0..<1)
-            if randValue < chance {
+            if randValue < chance && summaryCount > 4  {
                 isQuizStart = true
                 startQueez(currentTask!, getAnswersForTask(currentTask!))
                 return
