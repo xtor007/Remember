@@ -21,10 +21,19 @@ class ExerciseVC: UIViewController {
     @IBOutlet weak var taskImage: UIImageView!
     
     var changeValues: ((Int,Int,Int)->(Void))!
-    var startQuiz: ((Task,[String])->(Bool))!
+    var startQuiz: ((Task,[String])->(Void))!
+    
+    var isNeedInitTask = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if isNeedInitTask {
+            initTask()
+            isNeedInitTask = false
+        }
     }
     
     func uploadData(tasks: [Task]) {
@@ -37,8 +46,15 @@ class ExerciseVC: UIViewController {
             self.forwardLabel.text = forwardValue.description
         }
         startQuiz = { task, answers in
-            print("quiz")
-            return true
+            if let quizVC = self.storyboard?.instantiateViewController(withIdentifier: "quizVC") as? QuizVC {
+                quizVC.modalPresentationStyle = .fullScreen
+                self.present(quizVC, animated: true) {
+                    quizVC.uploadData(answers: answers, rightAnswer: task.answer!)
+                    quizVC.quizAnswerDelegate = self
+                }
+            } else {
+                //error
+            }
         }
         initTask()
     }
@@ -89,4 +105,13 @@ class ExerciseVC: UIViewController {
         ])
     }
 
+}
+
+extension ExerciseVC: QuizAnswerDelegate {
+    
+    func postAnswer(isRight: Bool) {
+        game.quizAnswer(isRight: isRight, changeValues: changeValues)
+        isNeedInitTask = true
+    }
+    
 }

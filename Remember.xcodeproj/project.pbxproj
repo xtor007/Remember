@@ -29,6 +29,8 @@
 		FF798FA6283D1428004F3C91 /* ExerciseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798FA5283D1428004F3C91 /* ExerciseVC.swift */; };
 		FF798FA9283D1613004F3C91 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798FA8283D1613004F3C91 /* Game.swift */; };
 		FF798FAB283D2345004F3C91 /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798FAA283D2345004F3C91 /* ShowAlert.swift */; };
+		FF798FAD283E1EE1004F3C91 /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798FAC283E1EE1004F3C91 /* QuizVC.swift */; };
+		FF798FAF283E2644004F3C91 /* QuizAnswerDalegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF798FAE283E2644004F3C91 /* QuizAnswerDalegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		FF798FA5283D1428004F3C91 /* ExerciseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseVC.swift; sourceTree = "<group>"; };
 		FF798FA8283D1613004F3C91 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		FF798FAA283D2345004F3C91 /* ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
+		FF798FAC283E1EE1004F3C91 /* QuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVC.swift; sourceTree = "<group>"; };
+		FF798FAE283E2644004F3C91 /* QuizAnswerDalegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAnswerDalegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,7 @@
 				FF798F9F28393E6C004F3C91 /* EditTaskVC.swift */,
 				FF798FA128396CC9004F3C91 /* CatalogVC.swift */,
 				FF798FA5283D1428004F3C91 /* ExerciseVC.swift */,
+				FF798FAC283E1EE1004F3C91 /* QuizVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 				FF798F9D283927AB004F3C91 /* CloseDelegate.swift */,
 				FF798FA3283BBB0D004F3C91 /* DeleteTaskDelegate.swift */,
 				FF798FAA283D2345004F3C91 /* ShowAlert.swift */,
+				FF798FAE283E2644004F3C91 /* QuizAnswerDalegate.swift */,
 			);
 			path = Extantions;
 			sourceTree = "<group>";
@@ -235,8 +241,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF798F9C28391CB3004F3C91 /* EditCatalogVC.swift in Sources */,
+				FF798FAD283E1EE1004F3C91 /* QuizVC.swift in Sources */,
 				FF798FA9283D1613004F3C91 /* Game.swift in Sources */,
 				FF798FA028393E6C004F3C91 /* EditTaskVC.swift in Sources */,
+				FF798FAF283E2644004F3C91 /* QuizAnswerDalegate.swift in Sources */,
 				FF798F962837D2CF004F3C91 /* DataService.swift in Sources */,
 				FF798F9E283927AB004F3C91 /* CloseDelegate.swift in Sources */,
 				FF798FA4283BBB0D004F3C91 /* DeleteTaskDelegate.swift in Sources */,

@@ -13,6 +13,8 @@ class Game {
     private var passed = [Task]()
     private var forward = [Task]()
     
+    private var isQuizStart = false
+    
     private var currentTask: Task?
     
     private(set) var answer = ""
@@ -33,16 +35,14 @@ class Game {
         return currentTask
     }
     
-    func answerSend(isKnown: Bool, changeValues: @escaping (Int,Int,Int)->(Void), startQueez: @escaping (Task,[String])->(Bool)) {
+    func answerSend(isKnown: Bool, changeValues: @escaping (Int,Int,Int)->(Void), startQueez: @escaping (Task,[String])->(Void)) {
         if isKnown {
             let chance = 0.2
             let randValue = Double.random(in: 0..<1)
             if randValue < chance {
-                if startQueez(currentTask!, getAnswersForTask(currentTask!)) {
-                    passed.append(currentTask!)
-                } else {
-                    forward.append(currentTask!)
-                }
+                isQuizStart = true
+                startQueez(currentTask!, getAnswersForTask(currentTask!))
+                return
             } else {
                 passed.append(currentTask!)
             }
@@ -59,6 +59,27 @@ class Game {
             }
         }
         changeValues(left.count,passed.count,forward.count)
+    }
+    
+    func quizAnswer(isRight: Bool, changeValues: @escaping (Int,Int,Int)->(Void)) {
+        if isQuizStart {
+            isQuizStart = false
+            if isRight {
+                passed.append(currentTask!)
+            } else {
+                forward.append(currentTask!)
+            }
+            currentTask = nil
+            if left.count == 0 {
+                if forward.count == 0 {
+                    onFinish()
+                } else {
+                    left = forward
+                    forward = []
+                }
+            }
+            changeValues(left.count,passed.count,forward.count)
+        }
     }
     
     private func getAnswersForTask(_ task: Task) -> [String] {
