@@ -13,6 +13,7 @@ class FinalVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .light
     }
     
     @IBAction func homeAction(_ sender: Any) {

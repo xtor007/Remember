@@ -28,6 +28,7 @@ class EditTaskVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .light
     }
     
     @IBAction func backAction(_ sender: Any) {
@@ -41,27 +42,27 @@ class EditTaskVC: UIViewController {
             taskValue = textView.text
         }
         if answerValue == "" {
-            //error
+            showError(message: "You don't enter answer")
             return
         }
         switch type {
         case .photo:
             if taskImage.image == nil {
-                //error
+                showError(message: "You don't select image")
                 return
             }
         case .text:
             if taskValue == "" {
-                //error
+                showError(message: "You don't enter task")
                 return
             }
         case .photoText:
             if taskValue == "" || taskImage.image == nil {
-                //error
+                showError(message: "You don't enter data")
                 return
             }
         case .none:
-            //error
+            showError(message: "Somethig is not good, reload app")
             return
         }
         var text: String?
@@ -77,7 +78,7 @@ class EditTaskVC: UIViewController {
             DataService.storage.addTask(forCatalog: catalog, withTextTask: text, withPhoto: taskImage.image, withAnswer: answerValue) {
                 self.backAction(0)
             } onError: { message in
-                //error
+                self.showError(message: "Somethig is not good, reload app")
             }
 
         }
@@ -136,13 +137,13 @@ class EditTaskVC: UIViewController {
                 if let answer = task.answer {
                     answerValue = answer
                 } else {
-                    //error
+                    showError(message: "Somethig is not good, reload app")
                 }
             } else {
                 if let answer = task.answer {
                     textView.text = answer
                 } else {
-                    //error
+                    showError(message: "Somethig is not good, reload app")
                 }
             }
         }
@@ -167,7 +168,7 @@ extension EditTaskVC: UIImagePickerControllerDelegate, UINavigationControllerDel
             taskImage.image = image
             dismiss(animated: true)
         } else {
-            //error
+            showError(message: "Somethig is not good, reload app")
         }
     }
     

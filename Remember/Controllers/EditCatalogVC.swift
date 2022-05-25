@@ -21,6 +21,7 @@ class EditCatalogVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .light
         tasksTable.delegate = self
         tasksTable.dataSource = self
     }
@@ -51,7 +52,7 @@ class EditCatalogVC: UIViewController {
             self.tasks = result
             self.tasksTable.reloadData()
         } onError: { message in
-            //error
+            self.showError(message: "Somethig is not good, reload app")
         }
     }
 }
@@ -99,7 +100,7 @@ extension EditCatalogVC: UITableViewDelegate, UITableViewDataSource {
             DataService.storage.deleteTask(self.tasks[indexPath.row]) {
                 self.getData()
             } onError: { message in
-                //error
+                self.showError(message: "Somethig is not good, reload app")
             }
         }
         swipeDelete.backgroundColor = .systemRed
@@ -115,7 +116,7 @@ extension EditCatalogVC: DeleteTaskDelegate {
     
     func deleteTask(_ task: Task) {
         DataService.storage.deleteTask(task) {} onError: { message in
-            //error
+            self.showError(message: "Somethig is not good, reload app")
         }
     }
     

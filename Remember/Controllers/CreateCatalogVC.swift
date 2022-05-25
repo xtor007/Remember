@@ -19,6 +19,7 @@ class CreateCatalogVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .light
     }
     
     @IBAction func selectTypeAction(_ sender: Any) {
@@ -36,7 +37,7 @@ class CreateCatalogVC: UIViewController {
             if name != "" {
                 DataService.storage.isCatalogNameOk(name) { isOk in
                     if !isOk {
-                        //error simple name
+                        self.showError(message: "Catalog name cannot be same")
                     } else {
                         DataService.storage.addNewCatalog(name: name, type: self.selectType) {
                             if let editCatalogVC = self.storyboard?.instantiateViewController(withIdentifier: "editCatalogVC") as? EditCatalogVC {
@@ -44,23 +45,22 @@ class CreateCatalogVC: UIViewController {
                                 editCatalogVC.closeDelegate = self
                                 self.presentDetail(editCatalogVC) {
                                     editCatalogVC.uploadData(name: name, type: self.selectType)
-                                    //self.dismiss(animated: false)
                                 }
                             } else {
-                                //error
+                                self.showError(message: "Somethig is not good, reload app")
                             }
                         } onError: { message in
-                            //error
+                            self.showError(message: "Somethig is not good, reload app")
                         }
                     }
                 } onError: { message in
-                    //error
+                    self.showError(message: "Somethig is not good, reload app")
                 }
             } else {
-                //error
+                showError(message: "You don't enter name")
             }
         } else {
-            //error
+            showError(message: "You don't write name")
         }
     }
     

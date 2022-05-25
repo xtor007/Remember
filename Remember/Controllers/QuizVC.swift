@@ -21,6 +21,7 @@ class QuizVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .light
     }
     
     func uploadData(answers: [String], rightAnswer: String) {
@@ -52,7 +53,7 @@ class QuizVC: UIViewController {
                     quizAnswerDelegate.postAnswer(isRight: true)
                 }
             } else {
-                //error
+                showError(message: "Somethig is not good, reload app")
             }
         }
     }
@@ -61,7 +62,7 @@ class QuizVC: UIViewController {
         if isAnswerPost {
             dismissDetail()
         } else {
-            //error
+            showError(message: "Somethig is not good, reload app")
         }
     }
     

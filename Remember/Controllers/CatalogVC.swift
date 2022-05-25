@@ -23,6 +23,7 @@ class CatalogVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .light
         goButton.layer.cornerRadius = goButton.frame.width/2
     }
     
@@ -57,7 +58,7 @@ class CatalogVC: UIViewController {
         DataService.storage.deleteCatalog(catalog) {
             self.backAction(0)
         } onError: { message in
-            //error
+            self.showError(message: "Somethig is not good, reload app")
         }
     }
     
@@ -70,7 +71,7 @@ class CatalogVC: UIViewController {
             if isFinish {
                 self.goToExercise()
             } else {
-                //error
+                self.showError(message: "Somethig is not good, reload app")
             }
         }
 
@@ -91,13 +92,13 @@ class CatalogVC: UIViewController {
                             self.starImage.transform = CGAffineTransform.identity
                         }
                     } onError: { message in
-                        //error
+                        self.showError(message: "Somethig is not good, reload app")
                     }
                 } else {
-                    //error
+                    self.showError(message: "Somethig is not good, reload app")
                 }
             } else {
-                //error
+                self.showError(message: "Somethig is not good, reload app")
             }
         }
     }

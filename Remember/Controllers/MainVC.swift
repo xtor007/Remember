@@ -25,6 +25,7 @@ class MainVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .light
         addButton.layer.cornerRadius = addButton.frame.width/2
         catalogsTable.dataSource = self
         catalogsTable.delegate = self
@@ -35,7 +36,7 @@ class MainVC: UIViewController {
             self.catalogs = catalogs
             self.catalogsTable.reloadData()
         } onError: { message in
-            //error
+            self.showError(message: "Somethig is not good, reload app")
         }
     }
     
@@ -53,10 +54,10 @@ class MainVC: UIViewController {
                         self.addButton.tintColor = .white
                     }
                 } else {
-                    //ERROR
+                    self.showError(message: "Somethig is not good, reload app")
                 }
             } else {
-                //error
+                self.showError(message: "Somethig is not good, reload app")
             }
         }
     }

@@ -28,6 +28,7 @@ class ExerciseVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .light
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,7 +70,7 @@ class ExerciseVC: UIViewController {
                     quizVC.quizAnswerDelegate = self
                 }
             } else {
-                //error
+                self.showError(message: "Somethig is not good, reload app")
             }
         }
         initTask()
@@ -85,7 +86,7 @@ class ExerciseVC: UIViewController {
                 taskImage.image = UIImage(data: imageData)
             }
         } else {
-            //error
+            showError(message: "Somethig is not good, reload app")
         }
     }
     
